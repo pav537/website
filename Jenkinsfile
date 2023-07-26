@@ -8,8 +8,8 @@ pipeline{
     	      steps 
            {
       	     print("building docker image") 
-             sudo chmod 777 /var/run/docker.sock
-             sh 'docker build -t pav537/cs2:latest .'
+             sh "sudo chmod 777 /var/run/docker.sock"
+             sh "docker build -t pav537/cs2:latest ."
       }
     }
   }
