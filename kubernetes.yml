@@ -19,7 +19,7 @@ spec:
    - name: cs2
      image: pav537/cs2
      ports:
-     - containerPort: 80
+     - containerPort: 3000
 
 
 ---
@@ -33,7 +33,7 @@ spec:
   type: NodePort
   ports:
     - targetPort: 80
-      port: 80
+      port: 3000
 	  nodePort:30008
   selector:
      app: casestudy
