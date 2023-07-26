@@ -13,11 +13,11 @@ spec:
  template:
   metadata:
    labels:
-    app: apache3
+    app: casestudy
   spec:
    containers:
    - name: apache2
-     image: ubuntu/apache2
+     image: pav537/cs2
      ports:
      - containerPort: 80
 ---
