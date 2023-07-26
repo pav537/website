@@ -2,26 +2,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
- name: caseStudy
+ name: apache-d
  labels:
   app: apache2
 spec:
- replicas: 2
+ replicas: 1
  selector:
   matchLabels:
-   app: apache2
+   app: casestudy
  template:
   metadata:
    labels:
-    app: casestudy
+    app: apache3
   spec:
    containers:
-   - name: cs2
-     image: pav537/cs2
+   - name: apache2
+     image: ubuntu/apache2
      ports:
-     - containerPort: 3000
-
-
+     - containerPort: 80
 ---
 
 
@@ -33,7 +31,7 @@ spec:
   type: NodePort
   ports:
     - targetPort: 80
-      port: 3000
+      port: 80
       nodePort: 30008
   selector:
      app: casestudy
