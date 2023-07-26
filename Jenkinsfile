@@ -25,6 +25,13 @@ pipeline{
         sh "docker push pav537/cs2"
       }
     }
+     stage('create nodeport service')
+        {
+          steps {
+            sh "kubectl create -f kubernetes.yml"
+          }
+        }
+
   }
   post {
     always {
